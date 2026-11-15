@@ -1,0 +1,526 @@
+{
+ "branch": "integrate-game-fix-sandbox",
+ "commit": "82cf14e63c884fdd8b4e50e0b456327baa882e54",
+ "files": [
+  {
+   "path": ".gitignore",
+   "bytes": 322,
+   "sha256": "b440f07e6b0e421250575798b933b1d1b4c52a4b67f379fb8b2e3279941e2383"
+  },
+  {
+   "path": "DEVELOPMENT_PROGRESS.md",
+   "bytes": 6836,
+   "sha256": "2bb2e7fcd915d24e124bddd415251921aaaebf175ae10daeb76e9446649ed6f3"
+  },
+  {
+   "path": "PROJECT_AUDIT.md",
+   "bytes": 13619,
+   "sha256": "d52a27a1233fa61eb40ce230234cfce239f22164865c582952c690d3c1626833"
+  },
+  {
+   "path": "README.md",
+   "bytes": 586,
+   "sha256": "08654c4838cdab218c95f74df6dc4580d2044d4e99172f45adf9121e1e60bfcc"
+  },
+  {
+   "path": "docs/PHASE0_PROGRESS.md",
+   "bytes": 7715,
+   "sha256": "d15751b3d9332590de16b042b9d7b30b0bad75a9a4d3e43a4484c8f1e5bb0bc0"
+  },
+  {
+   "path": "docs/buildscapes-game-checkpoint.patch",
+   "bytes": 344318,
+   "sha256": "89f00774d83d537f146a2a7b0bdce70b09c3a8f09daff1fa15ad6625dc6c07a0"
+  },
+  {
+   "path": "docs/changes-since-first-checkpoint.patch",
+   "bytes": 4720,
+   "sha256": "3cd30f6185a3678c13a433c78c62d8e2f0df35d94d9002017df5b283f0359d4f"
+  },
+  {
+   "path": "index.html",
+   "bytes": 1348,
+   "sha256": "911989527306a235efb96dfe70fc524377b33e24426498b7c7b1b26a5c72e1b9"
+  },
+  {
+   "path": "package-lock.json",
+   "bytes": 86397,
+   "sha256": "26373208ccd0e5d25231e2c97f921f0a66a55181660e1fcc31b1829e49cc0ef2"
+  },
+  {
+   "path": "package.json",
+   "bytes": 902,
+   "sha256": "7b3ed62f0e9c48f15982a9f31321dec02f61e1986d17f7b4b045fb51d96c0755"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/README.md",
+   "bytes": 475,
+   "sha256": "ce5d5eae3d305ab50a11f1ba6ca98ec63ec8f9737c2da980dcc57a0302139437"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/build.sh",
+   "bytes": 382,
+   "sha256": "875be68c2ee59e4fa3914a56a45f066f8a5dd6ac1f44317a5cbef8061da321a9"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/e2e1.py",
+   "bytes": 3105,
+   "sha256": "a0566c99e4557520b419c6498e129960516f5c5503fef0286783302ca43f9cfc"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/e2e2.py",
+   "bytes": 4278,
+   "sha256": "b3b9d7cbf3aead93dce23c65be04eb50b55e511ec71f86713e24de5807bb808b"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/e2e3.py",
+   "bytes": 1959,
+   "sha256": "b6b46642e686a42bea4713309c691ef770493f0b82d08fd92a887be5862f786e"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/e2e4.py",
+   "bytes": 2513,
+   "sha256": "f68d089f0ab46e9ea9b6f1e0b6bcf18d43239d6f6e0ab2a449710df9a0fb892d"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/e2e5.py",
+   "bytes": 3248,
+   "sha256": "381bf05346143bd3c93aa93b02368848da8aaf2c81cb7d4f82b7f2744ae07f16"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/e2e6.py",
+   "bytes": 2562,
+   "sha256": "b9dde2c214a3e51d3a437de39e370ced7d23ed92dacea75f1b76ae3e9c507030"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/e2e7.py",
+   "bytes": 888,
+   "sha256": "d8abc3893dfb6879cab609e0290bc27c35491c4ae6b9694e1362e39059ff5533"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/e2e8.py",
+   "bytes": 1873,
+   "sha256": "9189215392fe1994ea5748b2eb86ec0c03fa8227e4ee83ddf0955252be8f24c5"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/lib.py",
+   "bytes": 2777,
+   "sha256": "3bdb4573726bc07a0829aeab4d73489f29f41b03d89e2d2c5f8c12e6865995eb"
+  },
+  {
+   "path": "scripts/sandbox-visual-test/t10.py",
+   "bytes": 447,
+   "sha256": "a6a04084a28a35b8e403cc1441702f7831581853765ee733cc522f7fbae17bdf"
+  },
+  {
+   "path": "scripts/test_simulation_engine.mjs",
+   "bytes": 6337,
+   "sha256": "114954179a52ec5f46a67ad8a448834eccfaf1f44ba3da8a66c1f29f6e5fbb9d"
+  },
+  {
+   "path": "src/App.tsx",
+   "bytes": 19678,
+   "sha256": "a504632ca730000002ca2686d84edc656f4db90f968c2dbe7bbca69ce788317f"
+  },
+  {
+   "path": "src/components/CrashScreen.tsx",
+   "bytes": 3080,
+   "sha256": "69dcb9e2f1b88dbc06be1a8f3d5a433f29802f7e7c09ef1e991e6b9ebea1a67d"
+  },
+  {
+   "path": "src/components/ErrorBoundary.tsx",
+   "bytes": 1144,
+   "sha256": "805a48b1dfefff3dd099a02fb710d38b7408c65358b7c862f0262f10ddb78263"
+  },
+  {
+   "path": "src/components/GameShell.tsx",
+   "bytes": 5053,
+   "sha256": "b41757793d8240e1686e22c879ad579faf6daa88b35983662cba053a6e3a1b67"
+  },
+  {
+   "path": "src/components/MissionDebriefScreen.tsx",
+   "bytes": 8734,
+   "sha256": "ffa22a295f0b89759be2326daf01d88ebb86f4a53cbd88e2edf858bafb51dcf5"
+  },
+  {
+   "path": "src/components/MissionStatusRibbon.tsx",
+   "bytes": 4238,
+   "sha256": "78460fc7e9a03fa2050c609c111c4d316a0fe72003fc10996602c1a97ba31f14"
+  },
+  {
+   "path": "src/components/Navbar.tsx",
+   "bytes": 8354,
+   "sha256": "121b1486ace2ed03b5dc8e378b2cd71e60294fc8a763e230947483bcb3ba9e94"
+  },
+  {
+   "path": "src/components/NovaCompanion.tsx",
+   "bytes": 11481,
+   "sha256": "2d2a748ec53c8e019387ac3e7c67e5524fc5792558376d6b4b98054429bb5064"
+  },
+  {
+   "path": "src/components/TestScene.tsx",
+   "bytes": 3785,
+   "sha256": "8ca3d31b6755bc207adaccca987f873d2f6d0771154b89c3a9ab28ff2c3270d8"
+  },
+  {
+   "path": "src/components/WebGLFallback.tsx",
+   "bytes": 2929,
+   "sha256": "cacb13b27981aa1268a2ac6bfef6046dcf25f92e52962d5b1ff76a4f5b2c9af3"
+  },
+  {
+   "path": "src/components/common/CircularGauge.tsx",
+   "bytes": 5453,
+   "sha256": "fbfa632e5cb7743fbdd024ce3981150dfc2aec23b07c52e30b8a9ff344b3d8a0"
+  },
+  {
+   "path": "src/components/common/MiniResourceBar.tsx",
+   "bytes": 2640,
+   "sha256": "65e393b513aa9c2b47227c66c8e7a268483fb054546197217fe3a1bd2b96a6ae"
+  },
+  {
+   "path": "src/components/common/SectionHeader.tsx",
+   "bytes": 1746,
+   "sha256": "99008a8213b3e2f347c42fa833350c523aa88dab520b4d6a461612f1a221e905"
+  },
+  {
+   "path": "src/components/common/StatusBadge.tsx",
+   "bytes": 2422,
+   "sha256": "e9a98dab809f686c8a621ff027ec32a546e084d1c769810a47d29e058c3875a0"
+  },
+  {
+   "path": "src/components/lunar-pov/ExplorationMarkers.tsx",
+   "bytes": 5275,
+   "sha256": "806626ce3d5315f012ed01365c50f3c45d33d8e1ca562d77ac14f473f2d1b59a"
+  },
+  {
+   "path": "src/components/lunar-pov/HabitatMesh.tsx",
+   "bytes": 4841,
+   "sha256": "2c2b4e785a02a192e2249acd5bf0d37f0775f5dce4e5adf930e4630af5add172"
+  },
+  {
+   "path": "src/components/lunar-pov/LunarPOVScene.tsx",
+   "bytes": 4187,
+   "sha256": "a177926061f05922bd208017a2df4da0bb73dea62d15d9f90d73bee94d8393a9"
+  },
+  {
+   "path": "src/components/lunar-pov/LunarSky.tsx",
+   "bytes": 2533,
+   "sha256": "077d540cead30cd8487c8af0e2a2a30a9919b4dc683f9c1f6f515be9b5972caa"
+  },
+  {
+   "path": "src/components/lunar-pov/LunarTerrain.tsx",
+   "bytes": 3870,
+   "sha256": "102ac0e1c0decc0a1d1d17e4d0cdd9689a222f1dd2ba29fbcba83408ea41a669"
+  },
+  {
+   "path": "src/components/lunar-pov/POVHud.tsx",
+   "bytes": 13008,
+   "sha256": "ddf402846933c04c9994a40cafdc47fd413bee279a50d8067ecfa92f424fa79c"
+  },
+  {
+   "path": "src/components/mars-pov/MarsExplorationMarkers.tsx",
+   "bytes": 5340,
+   "sha256": "7ef3acded5abbc03f0b44bb7f31dc7ea4e8407a956f9bc3f592fdfc957a341d7"
+  },
+  {
+   "path": "src/components/mars-pov/MarsHabitatMesh.tsx",
+   "bytes": 6668,
+   "sha256": "065c9723f7ef53186691ce1e5703708543276c96e2566d2666d743e6eecb9070"
+  },
+  {
+   "path": "src/components/mars-pov/MarsSky.tsx",
+   "bytes": 2801,
+   "sha256": "5757358e601fd602892b6e80856c54cc51eb5099f3b8ef04bc9a83a99e9bc662"
+  },
+  {
+   "path": "src/components/mars-pov/MarsSurfaceScene.tsx",
+   "bytes": 4128,
+   "sha256": "3a776c1ae4d04d53fd1206fbaf87c91eb0959a474e380492e4fe6b3e570c1185"
+  },
+  {
+   "path": "src/components/mars-pov/MarsTerrain.tsx",
+   "bytes": 4795,
+   "sha256": "7e73598a0f2ea2b81b240b0abd9193f3887af1473e0afa3303cc9042d2e394a4"
+  },
+  {
+   "path": "src/components/simulation/HabitatControlDeck.tsx",
+   "bytes": 34401,
+   "sha256": "beb7115442473c5ac849e0e57aa1ae5e167faf36664fe75938270d1f4873562a"
+  },
+  {
+   "path": "src/components/views/AchievementsView.tsx",
+   "bytes": 12418,
+   "sha256": "9ebca21c0df721b9919a5ee4226bfcfba17d94087fb7e33bfa945139175fac50"
+  },
+  {
+   "path": "src/components/views/ExplorationView.tsx",
+   "bytes": 20654,
+   "sha256": "c30387352c9e3f9de1e4c11c80d3d404fc757e64b89382b862cb84a31a2bbf40"
+  },
+  {
+   "path": "src/components/views/JournalView.tsx",
+   "bytes": 14562,
+   "sha256": "957cbdccc6857e5f3458981ade2e2d20d5965ff32bb9aef4e6e880de3b0b5042"
+  },
+  {
+   "path": "src/components/views/MissionSelectView.tsx",
+   "bytes": 15339,
+   "sha256": "b121f6ee1ea4dd558b8dd0e081ce09957e1dcc3f33214a9de8d1b6eb3775629f"
+  },
+  {
+   "path": "src/components/views/SettingsView.tsx",
+   "bytes": 13551,
+   "sha256": "bc281e81130bbb7b597c110517dcf3679264b4efe8a818ffc15c70419e436d91"
+  },
+  {
+   "path": "src/components/views/WelcomeView.tsx",
+   "bytes": 16808,
+   "sha256": "bd563c88144c082fa2255a3fefbf29a7b6068f34bcf9e4b28f0b96403079771d"
+  },
+  {
+   "path": "src/data/achievements.ts",
+   "bytes": 4545,
+   "sha256": "fa7fbf8d5bc675c5e8442cbda20c4a0c1f071dbfd783838d818503b14ac9706e"
+  },
+  {
+   "path": "src/data/apollo13.ts",
+   "bytes": 5898,
+   "sha256": "5b297503252030fdee37b9787f7260e7d037dae15437bb637e511ba40b9840fd"
+  },
+  {
+   "path": "src/data/exploration.ts",
+   "bytes": 7749,
+   "sha256": "5b343a4fd7f1413cc65693306bf33a165f24e803ce85cfa5ac5a72342a1e4f7d"
+  },
+  {
+   "path": "src/data/missions.ts",
+   "bytes": 6623,
+   "sha256": "4cf0223d0417daaca7e1c1f545997b9a5cf3d5c5d94eeec5ddd1d49ef52bf559"
+  },
+  {
+   "path": "src/data/solEvents.ts",
+   "bytes": 25140,
+   "sha256": "99f0e8c0179940739d19358d6fe1f9173721a5e0467ef0e068bfcf9cc76ae046"
+  },
+  {
+   "path": "src/design-system.ts",
+   "bytes": 5699,
+   "sha256": "0247795d595b385b20239ce710caf1eebc3c0ae7d98183becddd889b49270c1f"
+  },
+  {
+   "path": "src/engine/achievements.ts",
+   "bytes": 2586,
+   "sha256": "79c9854865523748a59b808fee1ad42af1ffc7d28f187970be2d52223c16db8b"
+  },
+  {
+   "path": "src/engine/field.ts",
+   "bytes": 13823,
+   "sha256": "0d93a6196a55a8f7737801719db9517b69ee1e3d2123269c4432cb965be59778"
+  },
+  {
+   "path": "src/engine/gameState.ts",
+   "bytes": 4360,
+   "sha256": "6d5c440f738a6e9554847bf945203998ea125bb423e7bedc2601b39f81215ade"
+  },
+  {
+   "path": "src/engine/objectives.ts",
+   "bytes": 12685,
+   "sha256": "75a97427b6f730da0124b73d0af63754c32d03d3bec2576ee64af77426e1a1c3"
+  },
+  {
+   "path": "src/engine/progress.ts",
+   "bytes": 3436,
+   "sha256": "3abcad76c27a5fdd8a13f1f614ef7cfb1f0dda6fcff16999903f82f30005b6a9"
+  },
+  {
+   "path": "src/engine/save.ts",
+   "bytes": 7609,
+   "sha256": "7fcc816dbe17754987ee1ca28de1a165f3877cfa8bb213e42e728fc93934d3e6"
+  },
+  {
+   "path": "src/engine/settings.ts",
+   "bytes": 2000,
+   "sha256": "6cfa832509148adf558baf4120ac340ecbafc500cf53b4cfcbebfffc8c6ae767"
+  },
+  {
+   "path": "src/engine/simulation.ts",
+   "bytes": 12864,
+   "sha256": "bd6460657191677c8bb5a3bf1b29616e42e12c1e02ed231a0f94c7c0d50c0218"
+  },
+  {
+   "path": "src/engine/webgl.ts",
+   "bytes": 1139,
+   "sha256": "10b5bd0e7e2a497070b1968e5cef0295c1009054fb265145f72db58884abdf7c"
+  },
+  {
+   "path": "src/game/FirstPersonRig.tsx",
+   "bytes": 11015,
+   "sha256": "4d8818da7bd7ffdc980b2c496844bc670dfd1f7d8eb8bc62d7a89ce504a912bd"
+  },
+  {
+   "path": "src/game/GameApp.tsx",
+   "bytes": 35538,
+   "sha256": "2add99cd6bc0b9415a36c6084ea090f4beb23c5eef439bf2d0f2a3721393950c"
+  },
+  {
+   "path": "src/game/api.ts",
+   "bytes": 2029,
+   "sha256": "3b29f5bef8447284fcce937a308e9be0b169e6f17ef53c01b6ca4f3625443b1a"
+  },
+  {
+   "path": "src/game/audio.ts",
+   "bytes": 12695,
+   "sha256": "1cc2c61d532bd57e9be37719803c08e8f59116ae76def6755c8ac6319a6668ed"
+  },
+  {
+   "path": "src/game/game.css",
+   "bytes": 20769,
+   "sha256": "2b8472cc9558048def2b9f642aa189b374f1c18a15dcb7dea0da8c5d10f57e78"
+  },
+  {
+   "path": "src/game/props.tsx",
+   "bytes": 27720,
+   "sha256": "ffeb7100b51c64c35c831b7883578a62b07a406d402b6ec6404d26154fd2e6ef"
+  },
+  {
+   "path": "src/game/runtime.ts",
+   "bytes": 5714,
+   "sha256": "3353ec74a2d9938552b8fbfc68916e27a97c668e5a31de2142f1d86d2bb1a35e"
+  },
+  {
+   "path": "src/game/scenes/CommandScene.tsx",
+   "bytes": 10647,
+   "sha256": "01d82858e8c64d03dd561353baed3e199a900e8341d0a57bf5894da83f6163b0"
+  },
+  {
+   "path": "src/game/scenes/DebriefScene.tsx",
+   "bytes": 1764,
+   "sha256": "c9886e6c704eaac6bc99870244b667fb22154d3c1fdbe4c722b1222586b2abc6"
+  },
+  {
+   "path": "src/game/scenes/HabitatScene.tsx",
+   "bytes": 14958,
+   "sha256": "894bfe7bf1f78d5e66c9edc2d276be7e39438afebeef620a88a98e666c8b202e"
+  },
+  {
+   "path": "src/game/scenes/IntroScene.tsx",
+   "bytes": 15673,
+   "sha256": "10ad7dbef3c46a571f79ee085efd24a8c431148ab68dd6e222e6dae6673431f6"
+  },
+  {
+   "path": "src/game/scenes/SurfaceScene.tsx",
+   "bytes": 20061,
+   "sha256": "fda8b19a4f3eee7fa35a57971000969f49651d5a4c1a142c0a1e0d01f7578b32"
+  },
+  {
+   "path": "src/game/terrain.ts",
+   "bytes": 14099,
+   "sha256": "f623124278029e19a5d11e159785c00313bf1dcec7bd5c0cb3f59b5a442acbc0"
+  },
+  {
+   "path": "src/game/textures.ts",
+   "bytes": 6969,
+   "sha256": "fe87001d49dd282d793d60c94022052e32948b4fa8c020985586605e7ccdcfed"
+  },
+  {
+   "path": "src/game/ui/DebriefOverlay.tsx",
+   "bytes": 3700,
+   "sha256": "75555a5676a1ba75952d9185fde766c1ef5d873dfa53fbfaf846b35769c07c71"
+  },
+  {
+   "path": "src/game/ui/Hud.tsx",
+   "bytes": 7673,
+   "sha256": "482067169d681a8cf389b8c2593e98acc69251c8013d154a21d47a250091ba6a"
+  },
+  {
+   "path": "src/game/ui/IntroOverlay.tsx",
+   "bytes": 10558,
+   "sha256": "aa448de779f19625267eb0824dc29e19373d03938b4914dc9aae08941fd23fd2"
+  },
+  {
+   "path": "src/game/ui/Panels.tsx",
+   "bytes": 32765,
+   "sha256": "aeb09f502a6a92a5a56471f448f4b8a451fc0dfc31a09bd560a03936aa584c97"
+  },
+  {
+   "path": "src/game/widgets.tsx",
+   "bytes": 5510,
+   "sha256": "648ccfa98e3928f36fcf491857557094d077f0587568dbf00a190df9555f0281"
+  },
+  {
+   "path": "src/hooks/useHabitatSimulation.ts",
+   "bytes": 4906,
+   "sha256": "3a9318663d799085c9c771719015523d5b82a4cbb2e5616c85d6edd9e39fa70f"
+  },
+  {
+   "path": "src/index.css",
+   "bytes": 6000,
+   "sha256": "4e921fd5ddf20729d30c89b2580af3dfd2168146ee2fc29f1ed47506ec666cfa"
+  },
+  {
+   "path": "src/main.tsx",
+   "bytes": 575,
+   "sha256": "376a9568c10a0a45ac9f9a84a5a0fab042bc767a236ee8d4cf0f8aa284d0ceb2"
+  },
+  {
+   "path": "src/types.ts",
+   "bytes": 4525,
+   "sha256": "7508c082c7865e50307fe2af1ff6a7841fee287630996f614061b1f26a995f07"
+  },
+  {
+   "path": "src/vite-env.d.ts",
+   "bytes": 38,
+   "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+  },
+  {
+   "path": "tests/differential.test.ts",
+   "bytes": 6233,
+   "sha256": "8282cd66784511a7979dffa80266da71c212003bea078a310bdc13e388793749"
+  },
+  {
+   "path": "tests/engine.test.ts",
+   "bytes": 8689,
+   "sha256": "21234428911736c65ef305fc4442f1b337b93e63514c57ee3d7199f5d94c6785"
+  },
+  {
+   "path": "tests/fixtures/loader.mjs",
+   "bytes": 590,
+   "sha256": "457097972be3b774ef83a0823fcb796cda89934669674eb86326b1f41389fe21"
+  },
+  {
+   "path": "tests/fixtures/original-hook.ts",
+   "bytes": 16231,
+   "sha256": "0998760e47ca6fe0e3742e5db156838577669995a4d6d5797b5c09f5d62a2ca8"
+  },
+  {
+   "path": "tests/fixtures/react-stub.ts",
+   "bytes": 1813,
+   "sha256": "57ddb21c7898295ca67aae4d1d425e4eed8d846195585a345984f70970408aa2"
+  },
+  {
+   "path": "tests/fixtures/register.mjs",
+   "bytes": 283,
+   "sha256": "c6a0058bc58640414d30ca79759fe012574153992846304333e05eeb809aba50"
+  },
+  {
+   "path": "tests/game.test.ts",
+   "bytes": 16579,
+   "sha256": "913b359d869f1014ce4fe42cd284b8ecb3dd5f9d2b2146117c670385fceaef01"
+  },
+  {
+   "path": "tests/phase0.test.ts",
+   "bytes": 12095,
+   "sha256": "8b353feb4053cc4f913351e1104cbb82b1990afe9509ac8e87c06800b6b88496"
+  },
+  {
+   "path": "tsconfig.json",
+   "bytes": 622,
+   "sha256": "e04cd5389ec776a07964fb381bfe78f3c66d9be2c48c5c658355ab6d5292761c"
+  },
+  {
+   "path": "vite.config.ts",
+   "bytes": 811,
+   "sha256": "5ec61ba27191c04101782a3c75ef2d31cdb017a00af666048d9a80435a1f20d6"
+  }
+ ]
+}

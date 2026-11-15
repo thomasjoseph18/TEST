@@ -1,0 +1,96 @@
+diff --git a/src/game/GameApp.tsx b/src/game/GameApp.tsx
+index 581dd17..35ec23f 100644
+--- a/src/game/GameApp.tsx
++++ b/src/game/GameApp.tsx
+@@ -250,10 +250,10 @@ export function GameApp(props: GameAppProps) {
+     setPanel(null);
+     if (p?.kind === 'sol' && p.endAfter) dispatch({ type: 'MISSION_ENDED' });
+     if (p?.kind === 'site') {
+-      const task = taskForSite(p.siteId ?? '');
+-      void task;
++      // NOVA reacts to the discovery and points to the next thing to do.
++      window.setTimeout(() => say(`Great discovery! ${novaHint()}`), 600);
+     }
+-  }, [dispatch, setPanel]);
++  }, [dispatch, setPanel, say, novaHint]);
+ 
+   const openPanel = useCallback((k: PanelKind) => {
+     if (k === 'navigation') { dispatch({ type: 'OPEN_NAVIGATION' }); return; }
+@@ -693,7 +693,7 @@ export function GameApp(props: GameAppProps) {
+       )}
+ 
+       {/* ---------- loading / transition cover ---------- */}
+-      <div className={`bs-cover ${ready && !leaving ? 'hide' : 'show'}`} aria-hidden={ready && !leaving} role="status">
++      <div className={`bs-cover ${(ready || !canRender3D) && !leaving ? 'hide' : 'show'}`} aria-hidden={(ready || !canRender3D) && !leaving} role="status">
+         <div className="bs-spinner" />
+         <div className="bs-kicker">{leaving ? 'Traveling…' : `Preparing ${MISSIONS[dest].name.split(':')[0]}…`}</div>
+       </div>
+diff --git a/src/game/scenes/HabitatScene.tsx b/src/game/scenes/HabitatScene.tsx
+index 5e70f6c..10a6272 100644
+--- a/src/game/scenes/HabitatScene.tsx
++++ b/src/game/scenes/HabitatScene.tsx
+@@ -17,7 +17,7 @@ interface Props { destination: Destination; api: SceneApi; paused: boolean }
+ const W = { x: HABITAT_HALF.x, z: HABITAT_HALF.z, h: 3.5 };
+ 
+ const wallMat = new THREE.MeshStandardMaterial({ color: '#c9d0da', roughness: 0.6, metalness: 0.3 });
+-const floorMat = new THREE.MeshStandardMaterial({ color: '#2b313c', roughness: 0.55, metalness: 0.5 });
++const floorMat = new THREE.MeshStandardMaterial({ color: '#6a7688', roughness: 0.6, metalness: 0.35 });
+ const ceilMat = new THREE.MeshStandardMaterial({ color: '#aab2bf', roughness: 0.7, metalness: 0.2 });
+ const trim = new THREE.MeshStandardMaterial({ color: '#4b5565', roughness: 0.5, metalness: 0.7 });
+ 
+@@ -132,8 +132,8 @@ export function HabitatScene({ destination, api, paused }: Props) {
+ 
+   return (
+     <>
+-      <ambientLight intensity={0.55} />
+-      <hemisphereLight args={['#dfe9ff', '#2a2f3a', 0.7]} />
++      <ambientLight intensity={1.0} />
++      <hemisphereLight args={['#eef4ff', '#5a6578', 1.0]} />
+       {[-11, -3.5, 4, 11.5].map((x) => <pointLight key={x} position={[x, 3.1, 0]} intensity={14} distance={14} color="#eaf3ff" decay={1.6} />)}
+       <pointLight ref={alarm} position={[0, 3, 0]} color="#ff3a2a" intensity={0} distance={20} />
+       <Starfield count={400} radius={200} size={1.6} />
+diff --git a/src/game/scenes/SurfaceScene.tsx b/src/game/scenes/SurfaceScene.tsx
+index 1900488..71dcfa2 100644
+--- a/src/game/scenes/SurfaceScene.tsx
++++ b/src/game/scenes/SurfaceScene.tsx
+@@ -345,7 +345,9 @@ export function SurfaceScene({ destination, api, paused }: Props) {
+     }
+     void dist;
+     frame(dt, player.current);
+-  }, 1);
++  });
++  // NOTE: never pass a priority > 0 to useFrame here. In R3F a positive priority switches OFF automatic rendering,
++  // which froze the previous scene on screen when the Moon surface mounted.
+ 
+   const done = api.getCompletedSites();
+   const sim = api.getSim();
+diff --git a/tests/game.test.ts b/tests/game.test.ts
+index d7ab864..91756cc 100644
+--- a/tests/game.test.ts
++++ b/tests/game.test.ts
+@@ -298,3 +298,25 @@ test('boulders: deterministic, off the base pad, and large ones are solid', () =
+   assert.ok(a.some((r) => r.solid));
+   assert.ok(a.every((r) => !r.solid || r.scale > 1.2));
+ });
++
++// ---------- regression guards ----------
++import { readdirSync, readFileSync, statSync } from 'node:fs';
++import { join } from 'node:path';
++
++function sourceFiles(dir: string): string[] {
++  return readdirSync(dir).flatMap((n) => {
++    const p = join(dir, n);
++    return statSync(p).isDirectory() ? sourceFiles(p) : /\.tsx?$/.test(n) ? [p] : [];
++  });
++}
++
++test('R3F: no useFrame uses a positive priority (that would switch off automatic rendering and freeze the scene)', () => {
++  const offenders: string[] = [];
++  for (const file of sourceFiles('src/game')) {
++    const src = readFileSync(file, 'utf8');
++    // matches the closing "}, 1);" style of useFrame(cb, priority)
++    const re = /useFrame\(([\s\S]*?)\n\s*\}\s*,\s*(-?\d+)\s*\)/g;
++    for (const m of src.matchAll(re)) if (Number(m[2]) > 0) offenders.push(`${file}: useFrame priority ${m[2]}`);
++  }
++  assert.deepEqual(offenders, []);
++});
